@@ -1,0 +1,18 @@
+<a href="#"
+   [ngClass]="{'list-group-item': true,
+                'list-group-item-success': post.loveIts > 0 ,
+                'list-group-item-danger': post.loveIts <= 0}">
+
+  <div class="d-flex w-100 justify-content-between">
+    <h2 class="mb-1">{{ post.title }}</h2>
+    <small class="dateFloat">{{ post.created_at | date: 'd EEEE MMMM y' | uppercase }}</small>
+  </div>
+
+  <p class="mb-1">{{ post.content }}</p>
+
+  <button class="btn btn-success" (click)="like()" style="margin-right: 10px;">Like</button>
+  <button class="btn btn-danger"  (click)="dislike()" style="margin-right: 10px;">Dislike</button>
+
+  <small>Nombre de likes : {{ post.loveIts }}</small>
+
+</a>
